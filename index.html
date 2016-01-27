@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html ng-app='mathApp'>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body ng-controller="MainController as MC">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body ng-controller="MainController as mc">
+
+  <div>
+    <strong>{{mc.title}}</strong>
+  </div>
+
+  <br>
+  <br>
+
+    <div>
+      <label>Operation:
+        <select name="select" ng-model="mc.operator">
+          <option value="add">Add</option>
+          <option value="subtract">Subtract</option>
+          <option value="multiply">Multiply</option>
+          <option value="divide">Divide</option>
+        </select>
+      </label>
+    </div>
+
+    <div>
+      <label>First:
+        <input type="number" ng-model="mc.first">
+      </label>
+    </div>
+
+    <div>
+      <label>Second:
+        <input type="number" ng-model="mc.second">
+      </label>
+    </div>
+
+    <input type="submit" ng-click="mc.c=mc.calculate(mc.first, mc.second, mc.operator)" id="submit" value="Calculate"/>
+
+  <h3>The value is {{mc.c}}</h3>
 
 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src='./js/app.js'></script>
+  <script src='./js/controllers.js'></script>
+  <script src='./js/services.js'></script>
+</body>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src='./js/app.js'></script>
-    <script src='./js/controllers.js'></script>
-  </body>
 </html>

@@ -1,7 +1,8 @@
 angular.module('mathApp')
-  .controller("MainController", [MainController]);
+  .controller("MainController", ["calculate", MainController]);
 
-function MainController(){
+function MainController(calc) {
   var vm = this;
   vm.title = "Mini Calculator!";
+  vm.calculate = calc.calculate;
 }
